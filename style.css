@@ -126,6 +126,7 @@ main {
     font-size: 18px;
     font-weight: 500px;
     color: var(--primary-text-color);
+    cursor: pointer;
 
  }
 

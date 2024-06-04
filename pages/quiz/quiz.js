@@ -161,7 +161,8 @@ function finalizar() {
 
 
 function proximaPergunta() {
-    montarPergunta
+    montarPergunta()
+    adicionarEventoInputs()
 }
 
 function adicionarEventoInputs() {

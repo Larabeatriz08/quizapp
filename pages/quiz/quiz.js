@@ -9,6 +9,7 @@ let pontos = 0
 let pergunta = 1
 let resposta = ""
 let idInputResposta = ""
+let respostaCorretaId = ""
 
 
 
@@ -116,6 +117,23 @@ function alterarSinais(texto) {
 function guardarResposta(evento) {
    resposta = evento.target.value
    idInputResposta = evento.target.id
+
+
+
+   const botaoEnviar = document.querySelector(".alternativas button")
+  
+     botaoEnviar.addEventListener("cilck", validarResposta)
+}
+
+
+function validarResposta() {
+    if (resposta === quiz.questions[pergunta-1].answer) {
+        document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "correta")
+        pontos = pontos + 1
+    } else {
+         document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "errada")
+         document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "correta")
+    }
 }
 
 async function iniciar () {
@@ -127,6 +145,11 @@ async function iniciar () {
     const inputsResposta = document.querySelectorAll(".alternativas input")
     inputsResposta.forEach(input => {
         input.addEventListener("click", guardarResposta)
+
+        if (input.value === quiz.question[pergunta-1].answer) {
+            respostaCorretaId = input.id
+
+        }
     })
 }
 

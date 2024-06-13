@@ -5,15 +5,24 @@ const body = document.querySelector("body")
 const assunto = localStorage.getItem("assunto")
 
 let quiz = {}
+
 let pontos = 0
+
 let pergunta = 1
+
 let resposta = ""
+
 let idInputRespostas = ""
+
 let respostaCorretaId = ""
+
+
 
 botaoTema.addEventListener("click", () => {
     trocarTema(body, botaoTema)
 })
+
+
 
 verificarTema(body, botaoTema)
 
@@ -72,6 +81,8 @@ function montarPerguntas() {
                             </div>
                         </label>
 
+
+
                         <label for="alternativa_b">
                             <input type="radio" id="alternativa_b" name="alternativa" value= "${alterarSinais(quiz.questions[pergunta-1].options[1])}">
 
@@ -81,6 +92,8 @@ function montarPerguntas() {
                             </div>
                         </label>
 
+
+
                         <label for="alternativa_c">
                             <input type="radio" id="alternativa_c" name="alternativa" value= "${alterarSinais(quiz.questions[pergunta-1].options[2])}">
 
@@ -89,6 +102,8 @@ function montarPerguntas() {
                                 ${alterarSinais(quiz.questions[pergunta-1].options[2])}
                             </div>
                         </label>
+
+
 
                         <label for="alternativa_d">
                             <input type="radio" id="alternativa_d" name="alternativa" value= "${alterarSinais(quiz.questions[pergunta-1].options[3])}">
@@ -100,8 +115,11 @@ function montarPerguntas() {
                         </label>
                     </form>
 
+
+
                     <button>Responder</button>
 
+                    
                 </section>
                 `
 }

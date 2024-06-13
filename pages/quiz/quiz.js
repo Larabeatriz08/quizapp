@@ -8,8 +8,8 @@ let quiz = {}
 let pontos = 0
 let pergunta = 1
 let resposta = ""
-let idInputResposta = ""
-let respostaCorretaId = ""
+let idInputRespostas = ""
+let respostaCorretaID = ""
 
 
 
@@ -116,7 +116,7 @@ function alterarSinais(texto) {
 
 function guardarResposta(evento) {
    resposta = evento.target.value
-   idInputResposta = evento.target.id
+   idInputRespostas = evento.target.id
 
 
 
@@ -130,12 +130,13 @@ function validarResposta() {
     const botaoEnviar = document.querySelector(".alternativas button")
     botaoEnviar.innerText = "Próxima"
     botaoEnviar.removeEventListener("click", validarResposta)
-   
+
 
 
     if (pergunta === 10) {
-      botaoEnviar.addEventListener("click", finalizar)
         botaoEnviar.innerText = "Finalizar"
+        botaoEnviar.addEventListener("click", finalizar)
+      
     } else {
         botaoEnviar.addEventListener("click", proximaPergunta)
     }
@@ -143,11 +144,11 @@ function validarResposta() {
 
 
     if (resposta === quiz.questions[pergunta-1].answer) {
-        document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "correta")
+        document.querySelector(`label[for='${idInputRespostas}']`).setAttribute("id", "correta")
         pontos = pontos + 1
     } else {
-         document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "errada")
-         document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "correta")
+         document.querySelector(`label[for='${idInputRespostas}']`).setAttribute("id", "errada")
+         document.querySelector(`label[for='${respostaCorretaID}']`).setAttribute("id", "correta")
     }
 
     pergunta = pergunta + 1

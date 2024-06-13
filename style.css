@@ -71,8 +71,8 @@ header{
 
 }
 
-.tema button div {
-    background-color: var(--white);
+.tema button div{
+    background: var(--white);
     width: 12px;
     height: 12px;
     border-radius: 999px;
@@ -116,7 +116,7 @@ main {
 
  .assuntos button {
     border: none;
-    background: var(--bg-color);
+    background: var(--button-bg);
     display: flex;
     align-items: center;
     gap: 16px;
@@ -124,7 +124,7 @@ main {
     border-radius: 12px;
     box-shadow: var(--shadow);
     font-size: 18px;
-    font-weight: 500px;
+    font-weight: 500;
     color: var(--primary-text-color);
     cursor: pointer;
 

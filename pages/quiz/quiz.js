@@ -32,9 +32,6 @@ function alterarAssunto() {
     assuntoTitulo.innerText = assunto
 }
 
-
-alterarAssunto()
-
 async function buscarPerguntas() {
     const urlDados = "../../data.json"
     await fetch(urlDados).then(resposta => resposta.json()).then(dados => {
@@ -110,15 +107,13 @@ function montarPergunta() {
 }
 
 function alterarSinais(texto) {
-    return texto.replace(/</g, "&lt").replace(/>/g, "&gt;")
+    return texto.replace(/</g, "&lt;").replace(/>/g, "&gt")
 }
 
 
-function guardarResposta(evento) {
+function guardarRespostas(evento) {
    resposta = evento.target.value
    idInputRespostas = evento.target.id
-
-
 
    const botaoEnviar = document.querySelector(".alternativas button")
    botaoEnviar.addEventListener("click", validarResposta)
@@ -178,7 +173,7 @@ function adicionarEventoInputs() {
     })
 }
 
-async function iniciar () {
+async function iniciar() {
     alterarAssunto()
     await buscarPerguntas()
     montarPergunta()

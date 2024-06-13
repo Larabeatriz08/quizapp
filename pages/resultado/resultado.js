@@ -11,7 +11,7 @@ botaoTema.addEventListener("click", () => {
     trocarTema(body, botaoTema)
 })
 
-BotaoJogarNovamente.addEventListener("click", jogarNovamente)
+botaoJogarNovamente.addEventListener("click", jogarNovamente)
 
 verificarTema(body, botaoTema)
 
